@@ -12,8 +12,7 @@
 namespace FivePercent\Component\EnabledChecker\Exception;
 
 /**
- * Control object not enabled exception.
- * As example: the entity "Project" is not enabled (is disabled)
+ * Default exception that throws when object is not enabled
  *
  * @author Vitaliy Zhuk <zhuk2205@gmail.com>
  */

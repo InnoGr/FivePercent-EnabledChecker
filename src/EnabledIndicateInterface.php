@@ -12,8 +12,8 @@
 namespace FivePercent\Component\EnabledChecker;
 
 /**
- * Indicate of enabled
- * As example: The "product" entity should be indicated enabled flag
+ * Marks enabled objects
+ * As example: The "product" entity should be marked with enabled flag
  *
  * @author Vitaliy Zhuk <zhuk2205@gmail.com>
  */

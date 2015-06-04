@@ -12,7 +12,7 @@
 namespace FivePercent\Component\EnabledChecker;
 
 /**
- * EnabledCheckerAwareInterface should be implemented by classes that depends on a EnabledChecker.
+ * EnabledCheckerAwareInterface should be implemented by classes that depend on a EnabledChecker.
  *
  * @author Vitaliy Zhuk <zhuk2205@gmail.com>
  */

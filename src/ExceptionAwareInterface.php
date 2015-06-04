@@ -12,7 +12,7 @@
 namespace FivePercent\Component\EnabledChecker;
 
 /**
- * You should implemented of this interface, if you want set the code for exception, if object not enabled.
+ * You should implement this interface, if you want to throw your own exception when object is not enabled
  *
  * @author Vitaliy Zhuk <zhuk2205@gmail.com>
  */

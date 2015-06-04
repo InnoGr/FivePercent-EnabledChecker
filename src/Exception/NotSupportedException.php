@@ -12,7 +12,8 @@
 namespace FivePercent\Component\EnabledChecker\Exception;
 
 /**
- * The object not supported for enabled checker
+ * This exception throws when there is no checker that supports
+ * this object
  *
  * @author Vitaliy Zhuk <zhuk2205@gmail.com>
  */

@@ -12,7 +12,7 @@
 namespace FivePercent\Component\EnabledChecker;
 
 /**
- * Check object of enabled
+ * Checks if object is enabled
  *
  * @author Vitaliy Zhuk <zhuk2205@gmail.com>
  */
@@ -28,7 +28,7 @@ interface EnabledCheckerInterface
     public function isSupported($object);
 
     /**
-     * Check object of enabled
+     * Checks if object is enabled
      *
      * @param object $object
      *

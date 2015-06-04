@@ -15,8 +15,8 @@ use FivePercent\Component\EnabledChecker\EnabledIndicateInterface;
 use FivePercent\Component\Exception\UnexpectedTypeException;
 
 /**
- * Base enabled checker.
- * Supports object, if it implemented EnabledIndicateInterface.
+ * Default enabled checker.
+ * Supports objects that implement EnabledIndicateInterface.
  *
  * @author Vitaliy Zhuk <zhuk2205@gmail.com>
  */

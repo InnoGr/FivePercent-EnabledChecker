@@ -12,7 +12,7 @@
 namespace FivePercent\Component\EnabledChecker\Checker;
 
 /**
- * All enabled checker should be implemented of this interface
+ * All checkers should implement this interface
  *
  * @author Vitaliy Zhuk <zhuk2205@gmail.com>
  */
@@ -28,7 +28,7 @@ interface CheckerInterface
     public function isSupported($object);
 
     /**
-     * Check object of enabled
+     * Checks if object is enabled
      *
      * @param object $object
      *

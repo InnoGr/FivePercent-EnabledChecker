@@ -4,10 +4,11 @@
 Enabled checker
 ===============
 
-With this package, you can check objects of enabled.
+This package provides functionality of checking whether object is enabled or disabled.
 
-As example: you want check product of enabled before create order for this product. But, product will be disabled, if
-category is disabled or another objects in hierarchical is disabled.
+For example: when you're trying to perform order for a product and you want to make sure that it's possible (object is able to
+be ordered). In addition, you can check if category that contains this product could be checked or any other objects that the 
+product depends on).
 
 Installation
 ------------
@@ -23,7 +24,7 @@ Add **FivePercent/EnabledChecker** in your composer.json:
     }
 
 
-Now tell composer to download the library by running the command:
+Now tell composer to download the library by running command below:
 
 
 .. code-block:: bash
@@ -33,10 +34,10 @@ Now tell composer to download the library by running the command:
 Basic usage
 -----------
 
-Before use **EnabledChecker**, you must create and configure instance.
+Before using **EnabledChecker**, it's needed to create and configure instance of checker.
 
 
-**Note:** For use many checkers, please use **ChainChecker**
+**Note:** If it's needed to use many checkers, you should use **ChainChecker**
 
 .. code-block:: php
 
@@ -47,9 +48,9 @@ Before use **EnabledChecker**, you must create and configure instance.
     $enabledChecker = new EnabledChecker($chainChecker);
 
 
-After create EnabledChecker instance, you can add checkers to **ChainChecker**.
+When EnabledChecker is created, you can add checkers to **ChainChecker**.
 
-As example, we have a product and category of this product, with structure:
+For example, we have a product and category of this product, with following structure:
 
 .. code-block:: php
 
@@ -65,7 +66,7 @@ As example, we have a product and category of this product, with structure:
         public $enabled;
     }
 
-And we want create a custom checker for check product of enabled:
+And we want to create a custom checker to check if product is enabled:
 
 .. code-block:: php
 
@@ -82,12 +83,12 @@ And we want create a custom checker for check product of enabled:
         {
             /** @var Product $object */
             if ($object->category && !$object->category->enabled) {
-                // Category not enabled
+                // Category is not enabled
                 return false;
             }
 
             if (!$object->enabled) {
-                // Product not enabled
+                // Product is not enabled
                 return false;
             }
 
@@ -101,7 +102,7 @@ And add this checker instance to **ChainChecker**:
 
     $chainChecker->addChecker(new ProductEnabledChecker());
 
-After, we can check of enabled product ;)
+After this operation, we can check whether product is enabled or not ;)
 
 **Attention:** method ``check`` throws exception ``FivePercent\Component\EnabledChecker\Exception\NotEnabledException``, if checker returns false.
 
@@ -122,9 +123,9 @@ After, we can check of enabled product ;)
         $product = new Product();
         $product->enabled = true;
 
-        $enabledChecker->check($product); // All OK
+        $enabledChecker->check($product); // OK
 
-#. **Category of product is disabled**
+#. **Category of product are disabled**
 
     .. code-block:: php
 
@@ -135,7 +136,7 @@ After, we can check of enabled product ;)
 
         $enabledChecker->check($product); // Throws exception
 
-#. **Category and product is enabled**
+#. **Category and product are enabled**
 
     .. code-block:: php
 
@@ -147,8 +148,7 @@ After, we can check of enabled product ;)
         $enabledChecker->check($product); // All OK
 
 
-**Note:** If you want throws custom exception, you can implement ``FivePercent\Component\EnabledChecker\ExceptionAwareInterface``
-for object.
+**Note:** If you want to throw custom exception, you can implement interface ``FivePercent\Component\EnabledChecker\ExceptionAwareInterface``.
 
 .. code-block:: php
 
@@ -174,5 +174,4 @@ for object.
         }
     }
 
-**Note:** In simple objects, you can implement ``FivePercent\Component\EnabledChecker\EnabledIndicateInterface``, then need not
-create checker
+**Note:** In simple objects, you can implement ``FivePercent\Component\EnabledChecker\EnabledIndicateInterface``, that doesn't require checker creation
