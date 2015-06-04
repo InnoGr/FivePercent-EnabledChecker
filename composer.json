@@ -1,0 +1,26 @@
+{
+    "name": "fivepercent/enabled-checker",
+    "description": "Check objects of enabled",
+    "keywords": [ "enabled", "object", "object enabled" ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vitaliy Zhuk",
+            "email": "zhuk2205@gmail.com"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.4",
+        "fivepercent/exception": "~1.0"
+    },
+
+    "suggest": {
+        "psr/log": "Logging warning messages"
+    },
+
+    "autoload": {
+        "psr-4": { "FivePercent\\Component\\EnabledChecker\\": "src/" }
+    }
+}
